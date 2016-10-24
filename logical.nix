@@ -2,6 +2,7 @@
 
 {
   network.description = "Production NixOPS network";
+  network.enableRollback = true;
 
   nz1 =
     { config, pkgs, ... }:
