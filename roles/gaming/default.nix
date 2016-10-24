@@ -1,8 +1,9 @@
 { config, pkgs, ... }:
 
 {
-  nixpkgs.config = { allowUnfree = true; };
-  environment.systemPackages = with pkgs; [ steam ];
+  environment.systemPackages = with (import ../../envs { inherit pkgs; }); [
+    environments.gaming
+  ];
 
   # enable direct rendering for 32 bit applications
   # (required to run steam games on a 64 bit system)
