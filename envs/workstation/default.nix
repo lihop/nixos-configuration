@@ -3,8 +3,10 @@
 with pkgs; let
   minimalPaths =
     if (stdenv.system == "x86_64-linux") then
-      [ firefox
+      [ dmenu
+        firefox
         nixops
+        rxvt_unicode
       ]
     else
       [ ];
