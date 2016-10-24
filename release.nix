@@ -8,7 +8,8 @@ let
     testScript = "";
     machine =
       { config, pkgs, ... }:
-      { imports = [ (import (./roles + path) { inherit config; inherit pkgs; }) ];
+      { nixpkgs.config.allowUnfree = true;
+        imports = [ (import (./roles + path) { inherit config; inherit pkgs; }) ];
       };
   } args);
 in
