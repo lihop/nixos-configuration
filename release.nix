@@ -14,14 +14,15 @@ let
 in
 {
   common = roleTest /common { };
+  gaming = roleTest /gaming { };
   hydra = roleTest /hydra { };
   hydraProxy = roleTest /hydra/proxy.nix { };
+  hydraSlave = roleTest /hydra/slave.nix { };
   mail = roleTest /mail { };
   monitored = roleTest /monitored { };
   mysqlMaster = roleTest /mysql/master.nix { };
   mysqlSlave = roleTest /mysql/slave.nix { };
   server = roleTest /server { };
-  steamMachine = roleTest /steam-machine { };
   workstation = roleTest /workstation { };
   workstationExtra = roleTest /workstation-extra { };
 
