@@ -1,0 +1,14 @@
+version: '3'
+services:
+  nixos-iso-builder:
+    build: .
+    volumes:
+    - nix-store:/nix/store
+    - ./config:/config
+    - ./out:/out
+    command: >
+      sh -c "nix-build '<nixpkgs/nixos>' -A config.system.build.isoImage -I nixos-config=/config/iso.nix
+      && cp result/iso/* /out"
+
+volumes:
+  nix-store:
